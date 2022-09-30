@@ -38,4 +38,6 @@ class User extends Authenticatable
     ];
     
     return $this->belongsTo('App\Site');
+    return $this->belongsTo('App\Review');
+    return $this->belongsTo('App\Review_User');
 }
