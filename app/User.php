@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    return $this->belongsTo('App\Site');
+    return $this->belongsTo('App\Review');
+    return $this->belongsTo('App\Review_User');
 }
