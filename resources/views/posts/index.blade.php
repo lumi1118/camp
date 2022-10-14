@@ -15,14 +15,14 @@
             @foreach ($reviews as $review)
                 <div class='review'>
                     <img src="image/dinosaur.jpg" alt="Dinosaur">
-                    <h2 class='title'>{{ $post->title }}</h2>
-                    <p class='body'>{{ $post->body }}</p>
+                    <h2 class='title'>{{ $review->title }}</h2>
+                    <p class='body'>{{ $review->body }}</p>
                 </div>
             @endforeach
         </div>
         <div class='tags'>
             @foreach ($tags as $tag)
-                <p class='tag'>{{ $tag->name }}</p>
+                <font color="deepskyblue" class='tag'>#{{ $tag->name }}</font>
             @endforeach
         </div>
     </body>

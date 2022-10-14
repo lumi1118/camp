@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUserIdToSitesTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddUserIdToSitesTable extends Migration
      */
     public function up()
     {
-        Schema::table('sites', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned(); 
+        Schema::create('posts', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class AddUserIdToSitesTable extends Migration
      */
     public function down()
     {
-        Schema::table('sites', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('posts');
     }
 }

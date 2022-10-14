@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    return $this->belongsTo('App\Site_Tag');
+    public function site_tag(){
+        return $this->belongsTo('App\Site_Tag');
+    }
 }
