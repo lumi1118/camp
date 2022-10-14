@@ -10,13 +10,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
-        <div class='reviews'>
-            @foreach ($reviews as $review)
+        <h1>CampSite</h1>
+        <p>[<a href='/camps/registar'>キャンプ場登録</a>]</p>
+        <p>[<a href='/camps/create'>口コミを投稿する</a>]</p>
+        <div class='sites'>
+            @foreach ($sites as $site)
                 <div class='review'>
                     <img src="image/dinosaur.jpg" alt="Dinosaur">
-                    <h2 class='title'>{{ $review->title }}</h2>
-                    <p class='body'>{{ $review->body }}</p>
+                    <h2 class='title'><a href="/camps/{{ $site->id }}">{{ $site->name }}</h2>
+                    <!-- <p class='body'>{{ $site->body }}</p> -->
                 </div>
             @endforeach
         </div>

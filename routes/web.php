@@ -16,6 +16,13 @@
     return view('welcome');
 });*/
 Route::get('/', 'ReviewController@index');
-Route::get('/camp', 'ReviewController@index');
+Route::get('/camps', 'ReviewController@index');
+Route::get('/camps/{review}', 'ReviewController@site');
+Route::get('/camps/create', 'ReviewController@create');
+
+
+Route::get('/', function () {
+    return view('index');
+})->name('login');
 
 //Auth::routes();
