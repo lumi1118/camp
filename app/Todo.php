@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ToDo extends Model
 {
-    return $this->hasMany('App\Mark');
+    public function mark(){
+        return $this->hasMany('App\Mark');
+    }
 }

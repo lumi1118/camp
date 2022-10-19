@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Site_Tag extends Model
 {
-    return $this->hasMany('App\Site');
-    return $this->hasMany('App\Tag');
+    public function site(){
+        return $this->hasMany('App\Site');
+    }
+    
+    public function tag(){
+        return $this->hasMany('App\Tag');
+    }
 }

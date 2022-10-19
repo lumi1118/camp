@@ -37,7 +37,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    return $this->belongsTo('App\Site');
-    return $this->belongsTo('App\Review');
-    return $this->belongsTo('App\Review_User');
+    public function site(){
+        return $this->belongsTo('App\Site');
+    }
+    
+    public function review(){
+        return $this->belongsTo('App\Review');
+    }
+    
+    public function review_user(){
+        return $this->belongsTo('App\Review_User');
+    }
 }

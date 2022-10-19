@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddMarkIdToTodoesTable extends Migration
+class AddUserSiteIdToReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddMarkIdToTodoesTable extends Migration
      */
     public function up()
     {
-        Schema::table('todoes', function (Blueprint $table) {
-            $table->integer('mark_id')->unsigned();
+        Schema::table('reviews', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
+            $table->integer('site_id')->unsigned();
+            
         });
     }
 
@@ -25,7 +27,7 @@ class AddMarkIdToTodoesTable extends Migration
      */
     public function down()
     {
-        Schema::table('todoes', function (Blueprint $table) {
+        Schema::table('reviews', function (Blueprint $table) {
             //
         });
     }
